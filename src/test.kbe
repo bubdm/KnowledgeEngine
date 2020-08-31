@@ -1,0 +1,40 @@
+fact American  (West);
+fact Nation (Nono);
+fact Enemy (Nono America);
+fact Owns (Nono M1);
+fact Missile (M1);
+fact Nation (America);
+fact Cost (M1 19000);
+
+rule	R2
+		match Owns (Nono ?x)
+		match Missile (?x)
+		then
+		assert Sells (West Nono ?x)
+		;
+
+rule	R4
+		match Enemy (?x America)
+		then
+		assert Hostile (?x)
+		;
+
+rule	R3
+		match Missile (?x)	//	Missile (?x) to working knowledge
+		then
+		assert Weapon (?x)	//	Weapon (?x) to knowledge base
+		;
+
+		//rule r-done match Criminal(West) then retract Criminal (West) stop;
+
+rule	R1
+		match American (?x)
+		match Weapon (?y)
+		match Nation (?z)
+		match Hostile (?z)
+		match Sells (?x ?z ?y)
+		then
+		assert Criminal (?x)
+		;
+
+//derived fact is Criminal (West)

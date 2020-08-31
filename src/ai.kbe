@@ -1,0 +1,57 @@
+// SCRIPT FOR GETTING CREW
+//
+rule	R1
+		test ( isnull( $this.Name ))
+		then
+		assert IsItNull ( Yes )
+		;
+/*
+rule	check-crew
+		test ( $this.Ship.Reactor.CrewPct > 90 )
+		test ( not $this.Ship.Reactor.IsUpgrading )
+		test ( $this.Ship.SlipDrive.CrewPct > 90 )
+		test ( not $this.Ship.SlipDrive.IsUpgrading )
+		test ( $this.Ship.Shields.CrewPct > 90 )
+		test ( not $this.Ship.Shields.IsUpgrading )
+		test ( $this.Ship.Cannons.CrewPct > 90 )
+		test ( not $this.Ship.Cannons.IsUpgrading )
+		test ( $this.Ship.Cloak.CrewPct > 90 )
+		test ( not $this.Ship.Cloak.IsUpgrading )
+		test ( $this.Ship.Shields.CrewPct > 90 )
+		test ( not $this.Ship.Shields.IsUpgrading )
+		test ( $this.Ship.CrewUnassignedPct < 100 )
+		test ( $this.Ship.Crew < $this.Ship.CrewMax )
+		then
+		assert Mission ( Go Home )
+		assert Mission ( Get Crew )
+		;
+
+//		GO HOME MISSION
+//
+rule	go-home
+		match Mission ( Go Home )
+		nomatch Traveling ( To Home )
+		test ( $this.Ship.HomeWorld.GetCoordinates().Region != $this.Ship.GetCoordinates().Region )
+		then
+		exec ( $this.Ship.SetCourse( $this.Ship.HomeWorld.GetCoordinates().Region ))
+		assert Traveling ( To Home )
+		;
+
+rule	at-home
+		match Mission ( Go Home )
+		match Traveling ( To Home )
+		test ( $this.Ship.HomeWorld.GetCoordinates().Region == $this.Ship.GetCoordinates().Region )
+		then
+		retract Mission ( Go Home )
+		retract Traveling ( To Home )
+		;
+
+rule get-crew
+		match Mission ( Get Crew )
+		nomatch Mission ( Go Home )
+		then
+		bind ?crewneed ( $this.Ship.CrewMax - $this.Ship.Crew ) //TODO static / const values
+		//exec ( $this.Ship.HireCrew( ?crewneed ))
+		assert Crew ( Needs ?crewneed )
+		;
+*/

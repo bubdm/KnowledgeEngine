@@ -1,0 +1,60 @@
+// $ANTLR 2.7.7 (20060930): kbe.g -> RulesEngineParserTokenTypes.txt$
+RulesEngineParser    // output token vocab name
+FACT="fact"=4
+SEMI=5
+LPAREN=6
+RPAREN=7
+RULE="rule"=8
+THEN="then"=9
+MATCH="match"=10
+NOMATCH="nomatch"=11
+TEST="test"=12
+BINDEXISTS="bindexists"=13
+ASSERT="assert"=14
+RETRACT="retract"=15
+BIND="bind"=16
+UNBIND="unbind"=17
+EXEC="exec"=18
+EXECASSIGN="execassign"=19
+FIRERULE="firerule"=20
+STOP="stop"=21
+DOLLAR=22
+DOT=23
+LOG_AND="and"=24
+LOG_OR="or"=25
+LOG_XOR="xor"=26
+LOG_EQ=27
+LOG_NE=28
+LOG_GE=29
+LOG_GT=30
+LOG_LE=31
+LOG_LT=32
+AMPER=33
+PLUS=34
+MINUS=35
+STAR=36
+DIV=37
+LOG_NOT="not"=38
+ISNULL="isnull"=39
+COMMA=40
+IDENT("an indentifier")=41
+VARIABLE_IDENT("a variable_identifier")=42
+INT_LIT("a number")=43
+FLOAT_LIT=44
+STRING_LIT("a string")=45
+TRUE="true"=46
+FALSE="false"=47
+MOD="mod"=48
+EQUALS=49
+AT=50
+QUESTION=51
+LBRACK=52
+RBRACK=53
+LCURLY=54
+RCURLY=55
+COLON=56
+WS=57
+SL_COMMENT=58
+ML_COMMENT=59
+HEX_DIGIT=60
+ESC=61

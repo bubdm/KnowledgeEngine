@@ -1,0 +1,95 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F2A88556-524E-42FF-87DC-103467939EB6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KnowledgeEngineRules</RootNamespace>
+    <AssemblyName>KnowledgeEngineRules</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="antlr.runtime, Version=2.7.7.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assembler\Compiler.cs" />
+    <Compile Include="Assembler\CompilerEventArgs.cs" />
+    <Compile Include="Assembler\RulesEngineLexer.cs" />
+    <Compile Include="Assembler\RulesEngineParser.cs" />
+    <Compile Include="Core\Action\AssertAction.cs" />
+    <Compile Include="Core\Action\BindAction.cs" />
+    <Compile Include="Core\Action\StopAction.cs" />
+    <Compile Include="Core\Action\FireRuleAction.cs" />
+    <Compile Include="Core\Action\ExecAction.cs" />
+    <Compile Include="Core\Action\ExecAssignAction.cs" />
+    <Compile Include="Core\Action\IAction.cs" />
+    <Compile Include="Core\Action\RetractAction.cs" />
+    <Compile Include="Core\Action\UnBindAction.cs" />
+    <Compile Include="Core\Conditions\BindExistsCondition.cs" />
+    <Compile Include="Core\Conditions\ICondition.cs" />
+    <Compile Include="Core\Conditions\MatchCondition.cs" />
+    <Compile Include="Core\Conditions\NoMatchCondition.cs" />
+    <Compile Include="Core\Conditions\TestCondition.cs" />
+    <Compile Include="Core\ExecutionList.cs" />
+    <Compile Include="Core\Expression\ByteCode.cs" />
+    <Compile Include="Core\Expression\Expression.cs" />
+    <Compile Include="Core\Expression\ExpressionInterpreter.cs" />
+    <Compile Include="Core\Expression\ExpressionNode.cs" />
+    <Compile Include="Core\Expression\ExpressionPath.cs" />
+    <Compile Include="Core\Expression\OpCodes.cs" />
+    <Compile Include="Core\Expression\OpStack.cs" />
+    <Compile Include="Core\KnowledgeBase.cs" />
+    <Compile Include="Core\KnowledgeChangedEventArgs.cs" />
+    <Compile Include="Core\ReflectionCache.cs" />
+    <Compile Include="Core\RelationKey.cs" />
+    <Compile Include="Core\Relationship.cs" />
+    <Compile Include="Core\Rule.cs" />
+    <Compile Include="Core\RuleBase.cs" />
+    <Compile Include="Core\InferenceEngine.cs" />
+    <Compile Include="Core\Set.cs" />
+    <Compile Include="Core\SetItem.cs" />
+    <Compile Include="Core\Variable.cs" />
+    <Compile Include="Core\VariableBase.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="KnowledgeItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

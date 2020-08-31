@@ -1,0 +1,8 @@
+fact MarketCap ( GT 2B );
+
+rule	aggressive-rule
+		test ( $this.MarketCap > 2000 )
+		then
+		assert InvestmentType ( Aggressive )
+		;
+
